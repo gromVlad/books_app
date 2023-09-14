@@ -3,23 +3,26 @@ import styled from "styled-components";
 export type ButtonProps = {
   colorBack?: string;
   colorHover?: string;
-  colorActive?:string;
-}
+  colorActive?: string;
+};
 
-export const Button = styled.button<ButtonProps>(({ colorBack,colorHover,colorActive }) => `
+export const Button = styled.button<ButtonProps>(
+  ({ colorBack, colorHover, colorActive }) => `
+  cursor:pointer;
   display: inline-flex;
   padding: 16px 28px;
   justify-content: center;
   align-items: center;
   gap: 12px;
   border-radius: 16px;
-  background: ${colorBack || 'transparent'};
+  background: ${colorBack || "transparent"};
   border: none;
 
   &:active{
-    background: ${colorActive || 'transparent'} : !important
+    background: ${colorActive || "transparent"} 
   }
   &:hover{
-    background: ${colorHover || 'transparent'}
+    background: ${colorHover || "transparent"}
   }
-`)
+`,
+);

@@ -1,20 +1,16 @@
-import { useState } from "react";
 import { Button } from "../src/components/ui/button.styled";
 
 export function App() {
-  const [count, useCount] = useState<number>(1);
-
   return (
     <>
       <Button
         colorBack={"#F4CE47"}
         colorHover={"#F29927"}
         colorActive={"#64646"}
-        onClick={() => useCount(count + 1)}
       >
         LOGIN
       </Button>
-      {count}
+      <Button>LOGIN</Button>
     </>
   );
 }
