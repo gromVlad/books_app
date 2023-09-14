@@ -1,16 +1,22 @@
-import styled from "styled-components";
+import { useState } from "react";
+import { Button } from "../src/components/ui/button.styled";
 
 export function App() {
+  const [count, useCount] = useState<number>(1);
+
   return (
     <>
-      <One />
-      <One />
+      <Button
+        colorBack={"#F4CE47"}
+        colorHover={"#F29927"}
+        colorActive={"#64646"}
+        onClick={() => useCount(count + 1)}
+      >
+        LOGIN
+      </Button>
+      {count}
     </>
   );
 }
-
-const One = styled.input`
-  background-color: red;
-`;
 
 //https://www.figma.com/file/iqDCVOyoQrBW7ejtPo3jCK/Ecommerce-Big-bookshelf-(Community)?type=design&node-id=659-2505&mode=design&t=wBrF1ooOWBP1RMWB-0
