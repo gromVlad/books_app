@@ -4,25 +4,38 @@ export type ButtonProps = {
   colorBack?: string;
   colorHover?: string;
   colorActive?: string;
+  disable?: boolean;
+  colorText?: string;
+  colorTextHover?: string;
 };
 
 export const Button = styled.button<ButtonProps>(
-  ({ colorBack, colorHover, colorActive }) => `
+  ({
+    colorBack,
+    colorHover,
+    colorActive,
+    disable,
+    colorText,
+    colorTextHover,
+  }) => `
   cursor:pointer;
-  display: inline-flex;
+  display:inline-flex;
   padding: 16px 28px;
   justify-content: center;
   align-items: center;
   gap: 12px;
+  color:${colorText};
   border-radius: 16px;
-  background: ${colorBack || "transparent"};
+  background: ${!disable ? colorBack : "transparent"};
   border: none;
 
-  &:active{
-    background: ${colorActive || "transparent"} 
-  }
   &:hover{
-    background: ${colorHover || "transparent"}
+    background: ${!disable ? colorHover : "transparent"};
+    color:${colorTextHover};
+  }
+
+  &:active{
+    background: ${!disable ? colorActive : "transparent"} ;
   }
 `,
 );

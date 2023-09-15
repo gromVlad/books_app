@@ -6,11 +6,13 @@ export function App() {
       <Button
         colorBack={"#F4CE47"}
         colorHover={"#F29927"}
-        colorActive={"#64646"}
+        colorActive={"#646464"}
+        colorText={"#000000DE"}
+        colorTextHover={"#F4CE47"}
       >
         LOGIN
       </Button>
-      <Button>LOGIN</Button>
+      <Button disable={true}>LOGIN</Button>
     </>
   );
 }
