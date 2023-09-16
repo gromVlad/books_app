@@ -9,12 +9,23 @@ export function App() {
         colorActive={"#646464"}
         colorText={"#000000DE"}
         colorTextHover={"#F4CE47"}
+        variant={"default"}
       >
         LOGIN
       </Button>
-      <Button disable={true}>LOGIN</Button>
+      <Button
+        variant={"shop"}
+        colorBack={"#F4CE47"}
+        colorHover={"#F29927"}
+        colorActive={"#646464"}
+        colorText={"#000000DE"}
+        colorTextHover={"#F4CE47"}
+      >
+        LOGIN
+      </Button>
     </>
   );
 }
+
 
 //https://www.figma.com/file/iqDCVOyoQrBW7ejtPo3jCK/Ecommerce-Big-bookshelf-(Community)?type=design&node-id=659-2505&mode=design&t=wBrF1ooOWBP1RMWB-0
