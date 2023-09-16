@@ -8,13 +8,13 @@ export type SuperButtonProps = {
   colorActive?: string;
   disable?: boolean;
   colorText?: string;
-  colorTextHover?: string;
+  colorTextActive?: string;
   variant: "default" | "shop";
   children?:string;
   onClick?:() => void;
 };
 
-export const SuperButton = ({ colorBack, colorHover, colorActive, disable, colorText, colorTextHover, variant, children, onClick }: SuperButtonProps) => {
+export const SuperButton = ({ colorBack, colorHover, colorActive, disable, colorText, colorTextActive, variant, children, onClick }: SuperButtonProps) => {
   return(
     <>
       {variant === "default" && <ButtonDef
@@ -22,7 +22,7 @@ export const SuperButton = ({ colorBack, colorHover, colorActive, disable, color
         colorHover={colorHover}
         colorActive={colorActive}
         colorText={colorText}
-        colorTextHover={colorTextHover}
+        colorTextActive={colorTextActive}
         onClick={onClick}
         disable={disable}
       >
@@ -34,7 +34,7 @@ export const SuperButton = ({ colorBack, colorHover, colorActive, disable, color
         colorHover={colorHover}
         colorActive={colorActive}
         colorText={colorText}
-        colorTextHover={colorTextHover}
+        colorTextActive={colorTextActive}
         onClick={onClick}
       >
         <svg
@@ -58,7 +58,7 @@ export type ButtonDefProps = {
   colorActive?: string;
   disable?: boolean;
   colorText?: string;
-  colorTextHover?: string;
+  colorTextActive?: string;
 };
 
 export const ButtonDef = styled.button<ButtonDefProps>(
@@ -68,7 +68,7 @@ export const ButtonDef = styled.button<ButtonDefProps>(
     colorActive,
     disable,
     colorText,
-    colorTextHover
+    colorTextActive
   }) => `
   cursor:pointer;
   display:inline-flex;
@@ -83,11 +83,11 @@ export const ButtonDef = styled.button<ButtonDefProps>(
 
   &:hover{
     background: ${!disable ? colorHover : "transparent"};
-    color:${colorTextHover};
   }
 
   &:active{
     background: ${!disable ? colorActive : "transparent"} ;
+    color:${colorTextActive};
   }
 
   /* @media screen and (max-width:800px){
@@ -101,7 +101,7 @@ export type ButtonIconProps = {
   colorHover?: string;
   colorActive?: string;
   colorText?: string;
-  colorTextHover?: string;
+  colorTextActive?: string;
 };
 
 export const ButtonIcon = styled.button<ButtonIconProps>(
@@ -110,26 +110,22 @@ export const ButtonIcon = styled.button<ButtonIconProps>(
     colorHover,
     colorActive,
     colorText,
-    colorTextHover
+    colorTextActive
   }) => `
   cursor: pointer;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  width: 56px;
-  height: 56px;
   border-radius: 50%;
+  padding:0;
   border: none;
   color:${ colorText };
   background: ${ colorBack || "transparent" };
 
   &:hover{
     background: ${ colorHover || "transparent" };
-    color:${ colorTextHover };
   }
   
   &:active{
     background: ${ colorActive || "transparent" };
+    color:${ colorTextActive };
   } 
 `)
