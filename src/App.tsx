@@ -1,29 +1,9 @@
-import { Button } from "../src/components/ui/button.styled";
 
 export function App() {
   return (
-    <>
-      <Button
-        colorBack={"#F4CE47"}
-        colorHover={"#F29927"}
-        colorActive={"#646464"}
-        colorText={"#000000DE"}
-        colorTextHover={"#F4CE47"}
-        variant={"default"}
-      >
-        LOGIN
-      </Button>
-      <Button
-        variant={"shop"}
-        colorBack={"#F4CE47"}
-        colorHover={"#F29927"}
-        colorActive={"#646464"}
-        colorText={"#000000DE"}
-        colorTextHover={"#F4CE47"}
-      >
-        LOGIN
-      </Button>
-    </>
+    <div style={{display:'flex'}}>
+     
+    </div>
   );
 }
 
