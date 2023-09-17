@@ -1,6 +1,7 @@
 import type { Meta } from "@storybook/react";
 import { SuperButton } from "./superButton";
 import { useState } from "react";
+import { Typography } from "../typography/typography";
 
 const meta = {
   title: "Example/SuperButton",
@@ -18,7 +19,7 @@ export const Default = () => (
     colorTextActive={"#F4CE47"}
     variant="default"
   >
-    login
+    <Typography variant="buttonOrTab">Login</Typography>
   </SuperButton>
 );
 
@@ -52,7 +53,7 @@ export const ActiveDefault = () => {
         variant="default"
         onClick={countHendler}
       >
-        login
+        <Typography variant="buttonOrTab">Login</Typography>
       </SuperButton>
     </>
   );
@@ -91,6 +92,6 @@ export const Link = () => (
     variant="link"
     href={'https://ai.google/discover/palm2/'}
   >
-    Visit
+    <Typography variant="buttonOrTab">Visit</Typography>
   </SuperButton>
 );

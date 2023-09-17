@@ -11,7 +11,7 @@ export type SuperButtonProps = {
   colorText?: string;
   colorTextActive?: string;
   variant: "default" | "shop" | 'link';
-  children?:string;
+  children?:ReactNode;
   onClick?:() => void;
   href?:string;
 };
