@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import sprite from "../../../assets/sprite.svg"
+import { ReactNode } from "react";
 
 
 export type SuperButtonProps = {
@@ -9,12 +10,13 @@ export type SuperButtonProps = {
   disable?: boolean;
   colorText?: string;
   colorTextActive?: string;
-  variant: "default" | "shop";
+  variant: "default" | "shop" | 'link';
   children?:string;
   onClick?:() => void;
+  href?:string;
 };
 
-export const SuperButton = ({ colorBack, colorHover, colorActive, disable, colorText, colorTextActive, variant, children, onClick }: SuperButtonProps) => {
+export const SuperButton = ({ colorBack, colorHover, colorActive, disable, colorText, colorTextActive, variant, children, onClick, href }: SuperButtonProps) => {
   return(
     <>
       {variant === "default" && <ButtonDef
@@ -47,6 +49,20 @@ export const SuperButton = ({ colorBack, colorHover, colorActive, disable, color
         </svg>{" "}
       </ButtonIcon>
  }
+      {variant === "link" && <ButtonDef
+        colorBack={colorBack}
+        colorHover={colorHover}
+        colorActive={colorActive}
+        colorText={colorText}
+        colorTextActive={colorTextActive}
+        onClick={onClick}
+        disable={disable}
+        as={Link}
+        href={href}
+        target="_blank"
+      >
+        {children}
+      </ButtonDef>}
 
     </>
   )
@@ -59,6 +75,8 @@ export type ButtonDefProps = {
   disable?: boolean;
   colorText?: string;
   colorTextActive?: string;
+  as?: ReactNode;
+  href?: string;
 };
 
 export const ButtonDef = styled.button<ButtonDefProps>(
@@ -102,6 +120,8 @@ export type ButtonIconProps = {
   colorActive?: string;
   colorText?: string;
   colorTextActive?: string;
+  as?: ReactNode;
+  href?: string;
 };
 
 export const ButtonIcon = styled.button<ButtonIconProps>(
@@ -129,3 +149,7 @@ export const ButtonIcon = styled.button<ButtonIconProps>(
     color:${ colorTextActive };
   } 
 `)
+
+
+export const Link = styled.a`
+text-decoration: none;`

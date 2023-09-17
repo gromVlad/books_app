@@ -34,7 +34,7 @@ export const Icon = () => (
 );
 
 export const ActiveDefault = () => {
-  let [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number>(0);
 
   const countHendler = () => {
     setCount(count + 1);
@@ -59,7 +59,7 @@ export const ActiveDefault = () => {
 };
 
 export const ActiveIcon = () => {
-  let [ifSell, setIfSell] = useState<boolean>(false);
+  const [ifSell, setIfSell] = useState<boolean>(false);
 
   const countHendler = () => {
     setIfSell(!ifSell);
@@ -80,3 +80,17 @@ export const ActiveIcon = () => {
     </>
   );
 };
+
+export const Link = () => (
+  <SuperButton
+    colorBack={"#F4CE47"}
+    colorHover={"#F29927"}
+    colorActive={"#646464"}
+    colorText={"#000000DE"}
+    colorTextActive={"#F4CE47"}
+    variant="link"
+    href={'https://ai.google/discover/palm2/'}
+  >
+    Visit
+  </SuperButton>
+);
