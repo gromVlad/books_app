@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { thems } from "../../thems";
 
 export type TypographyType = {
   variant: 'h1' | 'h2' | 'h3' | "h4" | "h5" | "h5R" | 'h6' | 'subtitle1' | "buttonOrTab" | 'subtitle2' | 'body1' | 'body1R' | 'body2' | 'body2R' | 'caption' | 'overline'
   children:string;
 }
 
-export const Typography = ({ variant, children }: TypographyType) => {
+export const Typography = ({ variant, children}: TypographyType) => {
   return (
     <>
       {variant === 'h1' && <HeadlineH1 >{children}</HeadlineH1>}
@@ -29,6 +28,7 @@ export const Typography = ({ variant, children }: TypographyType) => {
   )
 }
 
+
 const HeadlineH1 = styled.h1`
   font-family: Clash Grotesk Variable;
 font-size: 96px;
@@ -36,7 +36,6 @@ font-style: normal;
 font-weight: 600;
 line-height: 120px;
 letter-spacing: -0.96px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const HeadlineH2 = styled.h2`
@@ -46,7 +45,6 @@ font-style: normal;
 font-weight: 600;
 line-height: 72px;
 letter-spacing: -0.3px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const HeadlineH3 = styled.h3`
@@ -56,7 +54,6 @@ font-style: normal;
 font-weight: 400;
 line-height: 56px; 
 text-transform: uppercase;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const HeadlineH4 = styled.h4`
@@ -67,7 +64,6 @@ font-weight: 500;
 line-height: 40px;
 letter-spacing: 0.08px;
 text-transform: uppercase;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const HeadlineH5 = styled.h5`
@@ -76,7 +72,6 @@ font-size: 24px;
 font-style: normal;
 font-weight: 500;
 line-height: 32px; 
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const HeadlineH5Regular = styled.h5`
@@ -85,7 +80,6 @@ font-size: 24px;
 font-style: normal;
 font-weight: 400;
 line-height: 28px; 
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const HeadlineH6 = styled.h6`
@@ -94,8 +88,7 @@ font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: 24px; 
-letter-spacing: 0.03px
-color:${thems.colors.white.whiteHighEmphasis}
+letter-spacing: 0.03px;
 `
 
 const Subtitle1 = styled.span`
@@ -105,7 +98,6 @@ font-style: normal;
 font-weight: 400;
 line-height: 24px; 
 letter-spacing: 0.024px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const ButtonOrTab = styled.span`
@@ -115,7 +107,6 @@ font-style: normal;
 font-weight: 500;
 line-height: 24px; 
 letter-spacing: 0.024px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const Subtitle2 = styled.span`
@@ -125,7 +116,6 @@ font-style: normal;
 font-weight: 400;
 line-height: 20px; 
 letter-spacing: 0.021px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const Body1 = styled.p`
@@ -135,7 +125,6 @@ font-style: normal;
 font-weight: 400;
 line-height: 24px; 
 letter-spacing: 0.024px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const Body1Regular = styled.p`
@@ -145,7 +134,6 @@ font-style: normal;
 font-weight: 300;
 line-height: 24px; 
 letter-spacing: 0.024px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const Body2 = styled.p`
@@ -155,8 +143,8 @@ font-style: normal;
 font-weight: 400;
 line-height: 20px; 
 letter-spacing: 0.021px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
+
 const Body2Regular = styled.p`
 font-family: Clash Grotesk Variable;
 font-size: 14px;
@@ -164,7 +152,6 @@ font-style: normal;
 font-weight: 400;
 line-height: 20px;
 letter-spacing: 0.021px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const Caption = styled.span`
@@ -174,7 +161,6 @@ font-style: normal;
 font-weight: 400;
 line-height: 16px; 
 letter-spacing: 0.018px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 const Overline = styled.span`
@@ -184,7 +170,6 @@ font-style: normal;
 font-weight: 400;
 line-height: 16px; 
 letter-spacing: 0.015px;
-color:${thems.colors.white.whiteHighEmphasis}
 `
 
 
