@@ -4,7 +4,12 @@ import { SuperButton } from "../../ui/button/superButton";
 import { thems } from "../../thems";
 import sprite from "../../../assets/sprite.svg"
 
-export const FindtoRead = () => {
+type FindtoReaType = {
+  onClick?: () => void
+}
+
+export const FindtoRead = ({ onClick }: FindtoReaType) => {
+  
   return (
     <>
       <Container>
@@ -24,6 +29,7 @@ export const FindtoRead = () => {
           colorText={"#000000DE"}
           colorTextActive={"#F4CE47"}
           variant="default"
+          onClick={onClick}
         >
           BROWSE NOW
         </SuperButton>
@@ -41,7 +47,6 @@ export const FindtoRead = () => {
 };
 
 const Container = styled.div`
-  cursor:pointer;
   display: flex;
   overflow: hidden;
   position: relative;
