@@ -39,9 +39,15 @@
   </g>
 </svg>
 
-</svg>
 
-
-</svg>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+  <defs>
+    <filter id="blur-filter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+    </filter>
+    <filter id="filter2">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+    </filter>
+  </defs>
+  <rect x="50" y="50" width="300" height="100" fill="blue" filter="url(#blur-filter)" />
 </svg>
