@@ -27,11 +27,9 @@ export const WhatToRead = ({ onClick }: WhatToReadType) => {
         <div className={"btn"}>
           <SuperButtonBig
             variant={"icon"}
-            colorBack={thems.colors.yellow.yellow500}
-            colorHover={thems.colors.black.blackbg}
+            colorBack={thems.colors.black.gray2}
+            colorHover={thems.colors.black.gray2} 
             colorActive={thems.colors.black.blackbg}
-            colorText={"#000000DE"}
-            colorTextActive={"#F4CE47"}
             colorIcons={thems.colors.black.blackbg}
             colorIconsActive={thems.colors.yellow.yellow500}
             onClick={onClick}
@@ -39,8 +37,8 @@ export const WhatToRead = ({ onClick }: WhatToReadType) => {
         </div>
         <div className={"iconBack"}>
           <svg
-            width="289"
-            height="401"
+            width="400"
+            height="500"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -54,13 +52,13 @@ export const WhatToRead = ({ onClick }: WhatToReadType) => {
 
 const Container = styled.div`
   display: flex;
-  overflow: hidden;
   position: relative;
-  width: 80%;
+  width: 95%;
+  flex-wrap: wrap;
+  overflow: hidden;
   max-height: 348px;
   padding: 24px;
   align-items: flex-start;
-  flex-shrink: 0;
   border-radius: 20px;
   color: white;
   justify-content: space-between;
@@ -72,8 +70,8 @@ const Container = styled.div`
     color: black;
   }
 
-  & .btn{
-    z-index:2;
+  & .content{
+    margin-right: auto;
   }
 
   & .header h4 {
@@ -85,8 +83,8 @@ const Container = styled.div`
 
   & .iconBack svg{
     position: absolute;
-    right: 400px;
-    top: 15px;
+    right: 17%;
+    top: 0;
     z-index:1;
   }
 `;

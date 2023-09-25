@@ -155,4 +155,4 @@ export const ButtonIcon = styled.button<ButtonIconProps>(
 
 export const Link = styled.a`
 text-decoration: none;
-padding:0`
+padding:padding: 16px 28px;`

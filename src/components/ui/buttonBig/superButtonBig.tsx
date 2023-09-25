@@ -178,6 +178,7 @@ export const ButtonIcon = styled.button<ButtonIconProps>(
 
   &:hover{
     background: ${ colorHover || "transparent" };
+     
   }
   
   &:active{
