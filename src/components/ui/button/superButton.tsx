@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import sprite from "../../../assets/sprite.svg"
 import { ReactNode } from "react";
+import { thems } from "../../thems";
 
 
 export type SuperButtonProps = {
@@ -139,6 +140,7 @@ export const ButtonIcon = styled.button<ButtonIconProps>(
   border: none;
   color:${ colorText };
   background: ${ colorBack || "transparent" };
+  transition:${thems.animation.btn};
 
   &:hover{
     background: ${ colorHover || "transparent" };
