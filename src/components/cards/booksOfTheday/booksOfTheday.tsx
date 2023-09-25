@@ -107,6 +107,7 @@ const StarSVG = styled.svg`
   left: 25%;
 `;
 
+
 const CircleSVG = styled.svg`
   position: absolute;
   z-index: 1;
