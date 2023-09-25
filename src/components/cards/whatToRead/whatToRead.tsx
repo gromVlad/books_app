@@ -14,7 +14,7 @@ export const WhatToRead = ({ onClick }: WhatToReadType) => {
       <Container>
         <div className={"content"}>
           <div className={"header"}>
-            <Typography variant="h4">FIND SOMETHING TO READ</Typography>
+            <Typography variant="h4">Deciding what to read next?</Typography>
           </div>
           <div className={"text"}>
             <Typography variant="body1">
