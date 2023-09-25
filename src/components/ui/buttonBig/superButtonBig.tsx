@@ -164,7 +164,8 @@ export const ButtonIcon = styled.button<ButtonIconProps>(
   }) => `
   cursor: pointer;
   display: inline-flex;
-   justify-content: center;
+  position: relative;
+  justify-content: center;
   align-items: center;
   width: 176px;
   height: 176px;

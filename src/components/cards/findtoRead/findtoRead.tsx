@@ -60,6 +60,7 @@ const Container = styled.div`
   border-radius: 20px;
   color: white;
   background: ${thems.colors.black.blackbg};
+  transition: ${thems.animation.card};
 
   &:hover {
     background: ${thems.colors.yellow.yellow800};
