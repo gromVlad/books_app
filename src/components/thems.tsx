@@ -25,7 +25,9 @@ export const thems = {
     }
   },
   media:{
-    tablet:'screen and (max-width:768px) and (min-width:576px)'
+    mobile:'screen and (max-width:480px)',
+    tablet: '(max-width: 1010px) ' ,
+    desktops: 'screen and (max-width:1248px) '
   },
   animation:{
     btn:'.5s ease-in-out',
