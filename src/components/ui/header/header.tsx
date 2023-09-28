@@ -3,6 +3,8 @@ import sprite from "../../../assets/sprite.svg";
 import { SuperButton } from "../button/superButton";
 import { Typography } from "../typography/typography";
 import { thems } from "../../thems";
+import { useState } from "react";
+import { Link} from 'react-scroll';
 
 type NavType = { name: string; link: string };
 type ArrNavType = Array<NavType>;
@@ -13,9 +15,15 @@ export type FooterProps = {
   isHidden?: boolean;
 };
 
-export const Header = ({ onClick, navItems, isHidden }: FooterProps) => {
+export const Header = ({ onClick, navItems}: FooterProps) => {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+
   return (
-    <Container>
+    <Container isActive={isActive}>
       <svg
         width="166"
         height="44"
@@ -24,13 +32,21 @@ export const Header = ({ onClick, navItems, isHidden }: FooterProps) => {
       >
         <use xlinkHref={`${sprite}#${"logo"}`} />
       </svg>
-      <Content>
+      <Content >
         {navItems?.map((el) => {
           return (
             <li>
-              <a href={el.link}>
+              <Link
+                activeClass="active"
+                to={el.link}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+                onClick={handleClick}
+              >
                 <Typography variant="h6">{el.name}</Typography>
-              </a>
+              </Link>
             </li>
           );
         })}
@@ -46,11 +62,24 @@ export const Header = ({ onClick, navItems, isHidden }: FooterProps) => {
       >
         <Typography variant="buttonOrTab">Login</Typography>
       </SuperButton>
+      <BurgerContainer className={"burger"} onClick={handleClick} isActive={isActive}>
+        <BurgerBar />
+        <BurgerBar />
+        <BurgerBar />
+        <BurgerBar />
+      </BurgerContainer>
     </Container>
   );
 };
 
-const Container = styled.div`
+export type ContentProps = {
+  isActive: boolean;
+};
+
+const Container = styled.div<ContentProps>(
+  ({
+    isActive
+  }) => `
   display: flex;
   gap: 10px 20px;
   max-width: 100%;
@@ -61,16 +90,37 @@ const Container = styled.div`
   background: #2a2c2e;
   border-radius: 20px;
 
-   @media ${thems.media.tablet} {
-     ul {
-      display:none;
-     }
-     button {
-      display:none;
-     }
-  }
+  @media ${thems.media.tablet} {
+    ul {
+     display: ${isActive ? 'flex' : 'none'};
+     position: fixed;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #2a2c2e;
+      z-index: 5;
+    }
+    button {
+      display: ${isActive ? 'flex' : 'none'};
+      position: fixed;
+      top:70%;
+      left: 50%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 5;
+    }
+    .burger{
+      display: block;
+    }
 
-`;
+  }
+`)
+
 
 const Content = styled.ul`
   display: flex;
@@ -86,9 +136,6 @@ const Content = styled.ul`
 
   & li {
     list-style-type: none;
-    & a {
-      text-decoration: none;
-      color: #fff;
       &:hover {
         color: #f4d867;
       }
@@ -99,4 +146,71 @@ const Content = styled.ul`
     }
   }
 
+  & .active{
+    color: #f4d867;
+  }
+
+`
+
+export type BurgerContainerProps = {
+  isActive:boolean;
+};
+
+
+const BurgerContainer = styled.div<BurgerContainerProps>(
+  ({
+    isActive
+  }) => `
+  display:none;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  z-index: 6;
+
+  ${ isActive && 
+    `
+    span:nth-child(1) {
+      top: 9px;
+      transform: rotate(135deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      left: -30px;
+    }
+
+    span:nth-child(3) {
+      display:none;
+    }
+
+    span:nth-child(4) {
+      top: 9px;
+      transform: rotate(-135deg);
+    }
+  `}
+`)
+
+const BurgerBar = styled.span`
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  transition: 0.25s ease-in-out;
+
+  &:nth-child(1) {
+    top: 0px;
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    top: 9px;
+  }
+
+  &:nth-child(4) {
+    top: 18px;
+  }
 `;

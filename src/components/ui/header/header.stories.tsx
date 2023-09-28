@@ -22,6 +22,12 @@ export const WithAutors = () => {
 
 
   return (
-    <Header navItems={navItems} isHidden={false} />
+    <>
+    <Header navItems={navItems} isHidden={false}/>
+      <section id={"books"} style={{ width: "90%", height: "500px", background: 'green', margin: '50px auto' }}>books</section>
+      <section id={"authors"} style={{ width: "90%", height: "500px", background: 'blue', margin:'50px auto' }}>authors</section>
+      <section id={"read"} style={{ width: "90%", height: "500px", background: 'yellow', margin: '50px auto' }}>read</section>
+      <section id={"about"} style={{ width: "90%", height: "500px", background: 'orange', margin: '50px auto', marginBottom:"50px" }}>about</section>
+    </>
   )
 }
