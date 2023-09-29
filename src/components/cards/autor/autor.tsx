@@ -6,15 +6,16 @@ type AutorType = {
   name: string;
   books: string;
   src?:string;
+  onclick?:() => void
 };
 
-export const Autor = ({ name, books, src }: AutorType) => {
+export const Autor = ({ name, books, src, onclick }: AutorType) => {
 
   const booksStr = `${books} books`
 
   return (
     <>
-      <Container>
+      <Container onClick={onclick}>
         {src ? <Image src={src} alt={`name autor ${name}`} /> : <NotImg>not img</NotImg>}
         <div className={'content'}>
           <Typography variant="subtitle1">
@@ -41,6 +42,8 @@ const Container = styled.div`
   width: 294px;
   height: 146px;
   background:${thems.colors.white.whiteHighEmphasis};
+  transition: ${thems.animation.card};
+  cursor:pointer;
 
   & .content {
     width: 110px;
@@ -49,6 +52,10 @@ const Container = styled.div`
 
   & .content h5{
     margin:0px;
+  }
+
+   &:hover{
+    background:${thems.colors.yellow.yellow200};
   }
 `
 

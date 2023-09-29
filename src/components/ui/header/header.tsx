@@ -4,7 +4,7 @@ import { SuperButton } from "../button/superButton";
 import { Typography } from "../typography/typography";
 import { thems } from "../../thems";
 import { useState } from "react";
-import { Link} from 'react-scroll';
+import { Link } from "react-scroll";
 
 type NavType = { name: string; link: string };
 type ArrNavType = Array<NavType>;
@@ -15,7 +15,7 @@ export type FooterProps = {
   isHidden?: boolean;
 };
 
-export const Header = ({ onClick, navItems}: FooterProps) => {
+export const Header = ({ onClick, navItems }: FooterProps) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
@@ -32,7 +32,7 @@ export const Header = ({ onClick, navItems}: FooterProps) => {
       >
         <use xlinkHref={`${sprite}#${"logo"}`} />
       </svg>
-      <Content >
+      <Content>
         {navItems?.map((el) => {
           return (
             <li>
@@ -62,7 +62,11 @@ export const Header = ({ onClick, navItems}: FooterProps) => {
       >
         <Typography variant="buttonOrTab">Login</Typography>
       </SuperButton>
-      <BurgerContainer className={"burger"} onClick={handleClick} isActive={isActive}>
+      <BurgerContainer
+        className={"burger"}
+        onClick={handleClick}
+        isActive={isActive}
+      >
         <BurgerBar />
         <BurgerBar />
         <BurgerBar />
@@ -77,9 +81,7 @@ export type ContentProps = {
 };
 
 const Container = styled.div<ContentProps>(
-  ({
-    isActive
-  }) => `
+  ({ isActive }) => `
   display: flex;
   gap: 10px 20px;
   max-width: 100%;
@@ -92,7 +94,7 @@ const Container = styled.div<ContentProps>(
 
   @media ${thems.media.tablet} {
     ul {
-     display: ${isActive ? 'flex' : 'none'};
+     display: ${isActive ? "flex" : "none"};
      position: fixed;
       top:0;
       left: 0;
@@ -105,7 +107,7 @@ const Container = styled.div<ContentProps>(
       z-index: 5;
     }
     button {
-      display: ${isActive ? 'flex' : 'none'};
+      display: ${isActive ? "flex" : "none"};
       position: fixed;
       top:70%;
       left: 50%;
@@ -116,11 +118,17 @@ const Container = styled.div<ContentProps>(
     }
     .burger{
       display: block;
+      ${isActive && `
+      position: fixed;
+      top: 15%; right: 5%;
+      `}
     }
 
-  }
-`)
 
+
+  }
+`
+);
 
 const Content = styled.ul`
   display: flex;
@@ -136,6 +144,7 @@ const Content = styled.ul`
 
   & li {
     list-style-type: none;
+    cursor:pointer;
       &:hover {
         color: #f4d867;
       }
@@ -150,17 +159,14 @@ const Content = styled.ul`
     color: #f4d867;
   }
 
-`
+`;
 
 export type BurgerContainerProps = {
-  isActive:boolean;
+  isActive: boolean;
 };
 
-
 const BurgerContainer = styled.div<BurgerContainerProps>(
-  ({
-    isActive
-  }) => `
+  ({ isActive }) => `
   display:none;
   width: 30px;
   height: 20px;
@@ -168,7 +174,8 @@ const BurgerContainer = styled.div<BurgerContainerProps>(
   cursor: pointer;
   z-index: 6;
 
-  ${ isActive && 
+  ${
+    isActive &&
     `
     span:nth-child(1) {
       top: 9px;
@@ -188,8 +195,10 @@ const BurgerContainer = styled.div<BurgerContainerProps>(
       top: 9px;
       transform: rotate(-135deg);
     }
-  `}
-`)
+  `
+  }
+`
+);
 
 const BurgerBar = styled.span`
   display: block;
