@@ -47,6 +47,7 @@ export const FindtoRead = ({ onClick }: FindtoReaType) => {
 };
 
 const Container = styled.div`
+  box-sizing: border-box;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -56,7 +57,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  flex-shrink: 0;
   border-radius: 20px;
   color: white;
   background: ${thems.colors.black.blackbg};
@@ -82,4 +82,7 @@ const Container = styled.div`
     stroke:${thems.colors.black.buttonBg};
   }
 
+  @media (max-width:650px){
+    max-width: 596px;
+  }
 `;

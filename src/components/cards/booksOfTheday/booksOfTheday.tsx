@@ -61,12 +61,13 @@ export const BooksOfTheday = ({ onClick, onClickIcons }: BooksOfThedayType) => {
 };
 
 const Container = styled.div`
+  box-sizing: border-box;
   position: relative;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 596px;
+  width: 596px;
   height: 348px;
   padding: 16px;
   background: url(${defaultImg}) no-repeat center / cover ;
@@ -97,6 +98,10 @@ const Container = styled.div`
     padding: 2px;
     background: ${thems.colors.black.blackbg};
     border-radius: 50%;
+  }
+
+  @media (max-width:650px){
+    max-width: 596px;
   }
 `;
 

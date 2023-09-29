@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import sprite from "../../../assets/sprite.svg";
-import { SuperButton } from "../button/superButton";
-import { Typography } from "../typography/typography";
-import { thems } from "../../thems";
 import { useState } from "react";
 import { Link } from "react-scroll";
+import { Typography } from "../../components/ui/typography/typography";
+import { SuperButton } from "../../components/ui/button/superButton";
+import { thems } from "../../components/thems";
+import sprite from "../../assets/sprite.svg";
 
 type NavType = { name: string; link: string };
 type ArrNavType = Array<NavType>;
@@ -84,7 +84,7 @@ const Container = styled.div<ContentProps>(
   ({ isActive }) => `
   display: flex;
   gap: 10px 20px;
-  max-width: 100%;
+  max-width: 1200px;
   height: 88px;
   padding: 20px 24px;
   justify-content: space-between;
@@ -109,7 +109,7 @@ const Container = styled.div<ContentProps>(
     button {
       display: ${isActive ? "flex" : "none"};
       position: fixed;
-      top:70%;
+      top:80%;
       left: 50%;
       flex-direction: column;
       justify-content: center;

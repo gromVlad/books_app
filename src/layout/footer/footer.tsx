@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { thems } from "../../thems";
-import sprite from "../../../assets/sprite.svg";
-import { Typography } from "../typography/typography";
+import sprite from "../../assets/sprite.svg";
+import { Typography } from "../../components/ui/typography/typography";
+import { thems } from "../../components/thems";
+
 
 type linkType = { name: string; link: string };
 type ArrDataLink = Array<linkType>;
