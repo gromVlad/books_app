@@ -1,5 +1,6 @@
 import type { Meta } from "@storybook/react";
 import { BooksCard } from "./booksCard";
+import { useState } from "react";
 
 const meta = {
   title: "Example/BooksCard",
@@ -11,6 +12,13 @@ export default meta;
 export const Default = () => <BooksCard src={'https://img.thriftbooks.com/api/images/m/9f3fd8545d85a0947fcbfd9fabf6a9605d96664b.jpg'} book={'Sobriety and Beyond'} name={'John Doe'}/>
 
 export const WithAutors = () => {
+
+  const [clickBtn, setclickBtn] = useState<number>(0)
+  const [clickIcons, setclickIcons] = useState<number>(0)
+
+  const btnhandler = () => setclickBtn(clickBtn + 1)
+  const iconshandler = () => setclickIcons(clickIcons + 1)
+  
 
   const storyBook = {
     authors: [
@@ -44,10 +52,14 @@ export const WithAutors = () => {
 
 
   return (
+    <>
+      <p>click on Btn : {clickBtn}</p>
+      <p>click on icons : {clickIcons}</p>
     <div style={{ background: 'black', padding: '100px',display:'flex',gap:'10px',flexWrap:'wrap' }}>
       {storyBook.authors.map((el, index) => (
-        <BooksCard key={index} src={el.src} name={el.name} book={el.books} />
+        <BooksCard key={index} src={el.src} name={el.name} book={el.books} onclickBtn={btnhandler} onClickIcons={iconshandler}/>
       ))}
     </div>
+    </>
   )
 }

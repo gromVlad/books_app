@@ -7,7 +7,7 @@ type BooksCardType = {
   name: string;
   book: string;
   src?: string;
-  onclick?: () => void;
+  onclickBtn?: () => void;
   onClickIcons?: () => void;
 };
 
@@ -15,14 +15,14 @@ export const BooksCard = ({
   name,
   book,
   src,
-  onclick,
+  onclickBtn,
   onClickIcons,
 }: BooksCardType) => {
   const bookStr = `${book} books`;
 
   return (
     <>
-      <Container>
+      <Container >
         {src ? (
           <Image src={src} alt={`name autor ${name}`} />
         ) : (
@@ -39,7 +39,7 @@ export const BooksCard = ({
                 colorText={thems.colors.yellow.yellow500}
                 colorTextActive={thems.colors.yellow.yellow500}
                 variant="default"
-                onClick={onclick}
+              onClick={onclickBtn}
               >
                 BUY NOW
               </SuperButton>

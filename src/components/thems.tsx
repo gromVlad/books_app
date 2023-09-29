@@ -7,6 +7,7 @@ export const thems = {
       yellow900: '#F29927',
       yellow800: '#F1A72B',
       yellow700: '#F4BA30',
+      yellow1000:'#E8880E'
     },
     black:{
       blackbg:'#2A2C2E',
