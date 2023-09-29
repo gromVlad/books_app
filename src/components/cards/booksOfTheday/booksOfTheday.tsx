@@ -67,7 +67,7 @@ const Container = styled.div`
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
-  width: 596px;
+  width: 575px;
   height: 348px;
   padding: 16px;
   background: url(${defaultImg}) no-repeat center / cover ;

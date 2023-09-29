@@ -29,12 +29,13 @@ export const About = ({ id }: AboutType) => {
 
 const Content = styled.div`
   border: 1px solid black;
+  padding:24px;
   & h2{
     text-align:center;
     text-transform: uppercase;
     margin:0px;
     padding:0px;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
   }
 
   & .card{
@@ -44,7 +45,7 @@ const Content = styled.div`
     flex-wrap:wrap;
   }
 
-  @media (max-width:1230px){
+  @media (max-width:1240px){
     .card{
     justify-content: center;
     gap:15px;

@@ -51,7 +51,7 @@ const Container = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
-  width: 596px;
+  width: 575px;
   height: 348px;
   padding: 24px;
   flex-direction: column;
