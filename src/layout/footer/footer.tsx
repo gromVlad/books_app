@@ -2,23 +2,24 @@ import styled from "styled-components";
 import sprite from "../../assets/sprite.svg";
 import { Typography } from "../../components/ui/typography/typography";
 import { thems } from "../../components/thems";
-
+import { Container } from "../../components/ui/container/container";
 
 type linkType = { name: string; link: string };
 type ArrDataLink = Array<linkType>;
 
 type FooterType = {
-  email?:string,
-  telephone?:string,
-  dataLink?: ArrDataLink
+  id: string;
+  email?: string;
+  telephone?: string;
+  dataLink?: ArrDataLink;
 };
 
-export const Footer = ({ email, telephone, dataLink }: FooterType) => {
-  const tel = `${telephone}`
-  const em = `${email}`
+export const Footer = ({ email, telephone, dataLink, id }: FooterType) => {
+  const tel = `${telephone}`;
+  const em = `${email}`;
 
   return (
-    <>
+    <Container id={id}>
       <ContainerUp>
         <svg
           width="166"
@@ -29,37 +30,39 @@ export const Footer = ({ email, telephone, dataLink }: FooterType) => {
           <use xlinkHref={`${sprite}#${"logo"}`} />
         </svg>
         <div className="icons">
-          <a target="_blank" href={dataLink && dataLink[0].link}><svg
-            width="24"
-            height="25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <use xlinkHref={`${sprite}#${"insta"}`} />
-          </svg>
-        </a>
-          <a target="_blank" href={dataLink && dataLink[1].link}><svg
-            width="24"
-            height="25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <use xlinkHref={`${sprite}#${"fd"}`} />
-          </svg>
-        </a>
-          <a target="_blank" href={dataLink && dataLink[2].link}><svg
-            width="24"
-            height="25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <use xlinkHref={`${sprite}#${"tw"}`} />
-          </svg>
-        </a>
+          <a target="_blank" href={dataLink && dataLink[0].link}>
+            <svg
+              width="24"
+              height="25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use xlinkHref={`${sprite}#${"insta"}`} />
+            </svg>
+          </a>
+          <a target="_blank" href={dataLink && dataLink[1].link}>
+            <svg
+              width="24"
+              height="25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use xlinkHref={`${sprite}#${"fd"}`} />
+            </svg>
+          </a>
+          <a target="_blank" href={dataLink && dataLink[2].link}>
+            <svg
+              width="24"
+              height="25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use xlinkHref={`${sprite}#${"tw"}`} />
+            </svg>
+          </a>
         </div>
-
       </ContainerUp>
-      <ContainerDown >
+      <ContainerDown>
         <div className="text">
           <Typography variant="caption">Terms and conditions</Typography>
           <Typography variant="caption">Privacy policy</Typography>
@@ -69,12 +72,9 @@ export const Footer = ({ email, telephone, dataLink }: FooterType) => {
           {email ? <Typography variant="caption">{em}</Typography> : ""}
         </div>
       </ContainerDown>
-    </>
+    </Container>
   );
 };
-
-
-
 
 const ContainerUp = styled.div`
   box-sizing: border-box;
@@ -84,27 +84,30 @@ const ContainerUp = styled.div`
   padding: 0px 24px;
   justify-content: space-between;
   align-items: center;
-  background:${thems.colors.black.blackbg};
+  background: ${thems.colors.black.blackbg};
 
-  & .icons{
+  & .icons {
     display: flex;
-    gap:16px;
+    gap: 16px;
   }
-`
+
+`;
 
 const ContainerDown = styled.div`
   box-sizing: border-box;
   display: flex;
   width: 100%;
-  height: 40px;
+  flex-wrap:wrap;
+  gap:15px;
   padding: 12px 24px;
-  color:${thems.colors.white.whiteHighEmphasis};
+  color: ${thems.colors.white.whiteHighEmphasis};
   justify-content: space-between;
   align-items: center;
-  background:${thems.colors.black.blackHighEmpathis};
+  background: ${thems.colors.black.blackHighEmpathis};
 
-  & .text{
+  & .text {
     display: flex;
-    gap:16px;
+    gap: 16px;
   }
-`
+
+`;
