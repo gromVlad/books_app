@@ -16,9 +16,11 @@ export type SuperButtonProps = {
   href?:string;
   colorIcons?:string;
   colorIconsActive?:string;
+  width?:string;
+  height?:string
 };
 
-export const SuperButtonBig = ({ colorBack, colorHover, colorActive, disable, colorText, colorTextActive, variant, children, onClick, href, colorIcons, colorIconsActive }: SuperButtonProps) => {
+export const SuperButtonBig = ({ colorBack, colorHover, colorActive, disable, colorText, colorTextActive, variant, children, onClick, href, colorIcons, colorIconsActive, width, height }: SuperButtonProps) => {
   return(
     <>
       {variant === "default" && <ButtonDef
@@ -29,6 +31,8 @@ export const SuperButtonBig = ({ colorBack, colorHover, colorActive, disable, co
         colorTextActive={colorTextActive}
         onClick={onClick}
         disable={disable}
+        width={width}
+        height={height}
       >
         {children}
       </ButtonDef>
@@ -64,6 +68,8 @@ export const SuperButtonBig = ({ colorBack, colorHover, colorActive, disable, co
         as={Link}
         href={href}
         target="_blank"
+        width={width}
+        height={height}
       >
         {children}
       </ButtonDef>}
@@ -104,6 +110,8 @@ export type ButtonDefProps = {
   colorTextActive?: string;
   as?: ReactNode;
   href?: string;
+  width?: string;
+  height?: string
 };
 
 export const ButtonDef = styled.button<ButtonDefProps>(
@@ -113,16 +121,18 @@ export const ButtonDef = styled.button<ButtonDefProps>(
     colorActive,
     disable,
     colorText,
-    colorTextActive
+    colorTextActive,
+    width,
+    height
   }) => `
   cursor:pointer;
-  display: flex;
-  padding: 45px 130px;
-  max-width:395px;
+  display: inline-flex;
+  max-width:${width}px;
+  width:100%;
+  height:${height}px;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  flex-shrink: 0;
   color:${colorText};
   border-radius: 20px;
   background: ${!disable ? colorBack : "transparent"};
@@ -194,7 +204,7 @@ export const ButtonIcon = styled.button<ButtonIconProps>(
 
 export const Link = styled.a`
 text-decoration: none;
-max-width:130px;`
+`
 
 export const Link2 = styled.a`
 text-decoration: none;

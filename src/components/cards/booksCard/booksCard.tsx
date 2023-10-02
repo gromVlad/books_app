@@ -68,7 +68,8 @@ const Container = styled.div`
   overflow: hidden;
   border-radius: 20px;
   padding: 16px;
-  width: 363px;
+  max-width: 363px;
+  width:100%;
   height: 184px;
   background: ${thems.colors.white.whiteHighEmphasis};
   cursor: pointer;

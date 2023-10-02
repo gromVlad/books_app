@@ -19,6 +19,8 @@ export const Default = () => (
     colorText={"black"}
     colorTextActive={"#F4CE47"}
     variant="default"
+    width={'395'}
+    height={'218'}
   >
     <Typography variant="h4">See all</Typography>
   </SuperButtonBig>
@@ -55,6 +57,8 @@ export const ActiveDefault = () => {
         colorTextActive={"#F4CE47"}
         variant="default"
         onClick={countHendler}
+        width={'395'}
+        height={'218'}
       >
         <Typography variant="h4">See all</Typography>
       </SuperButtonBig>
@@ -71,6 +75,8 @@ export const Link = () => (
     colorTextActive={"#F4CE47"}
     variant="link"
     href={'https://ai.google/discover/palm2/'}
+    width={'395'}
+    height={'218'}
   >
     <Typography variant="h4">Visit</Typography>
   </SuperButtonBig>

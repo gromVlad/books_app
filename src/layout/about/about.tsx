@@ -28,7 +28,6 @@ export const About = ({ id }: AboutType) => {
 };
 
 const Content = styled.div`
-  border: 1px solid black;
   padding:24px;
   & h2{
     text-align:center;
