@@ -8,7 +8,9 @@ const meta = {
 
 export default meta;
 
-export const Default = () => {
+export const Default = () => <Books />
+
+export const WithData = () => {
   const storyBook = [
       {
         name: 'John Doe',

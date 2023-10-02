@@ -39,6 +39,21 @@ export const WithAutors = () => {
         books: '4',
         src: 'https://m.media-amazon.com/images/S/amzn-author-media-prod/7stvfa8kpu5j4su9b2oh63f1a4.jpg'
       },
+      {
+        name: 'Harper Lee',
+        books: '2',
+        src: 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-50358657.jpg'
+      },
+      {
+        name: 'J.K. Rowling',
+        books: '9',
+        src: 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-1061157246.jpg'
+      },
+      {
+        name: 'Jane Austen',
+        books: '6',
+        src: 'https://cdn.britannica.com/12/172012-050-DAA7CE6B/Jane-Austen-Cassandra-engraving-portrait-1810.jpg'
+      },
     ],
   };
 

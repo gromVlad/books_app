@@ -2,33 +2,33 @@ import styled from "styled-components";
 import { Container } from "../../components/ui/container/container";
 import { Typography } from "../../components/ui/typography/typography";
 import { thems } from "../../components/thems";
-import { BooksCard } from "../../components/cards/booksCard/booksCard";
 import { SuperButtonBig } from "../../components/ui/buttonBig/superButtonBig";
+import { Autor } from "../../components/cards/autor/autor";
 
-type BooksType = {
+type AutorsType = {
   id?:string
-  booksData?:{name:string,books:string,src:string}[]
+  autorsData?:{name:string,books:string,src:string}[]
   handlerBtnCard?:() => void,
   handlerIcons?:() => void,
   handlerSeaAll?: () => void,
 };
 
-export const Books = ({ id, booksData, handlerBtnCard, handlerIcons, handlerSeaAll }: BooksType) => {
+export const Autors = ({ id, autorsData, handlerSeaAll }: AutorsType) => {
   
 
   return (
     <>
       <Container id={id} >
         <Content>
-          <Typography variant="h4">Bestsellers</Typography>
+          <Typography variant="h4">POPULAR AUTHORS</Typography>
           <Cards>
-            {booksData ? 
-              booksData.slice(0, 8).map((el,index) => {
-            return <BooksCard key={index} src={el.src} name={el.name} book={el.books} onclickBtn={handlerBtnCard} onClickIcons={handlerIcons} />
+            {autorsData ? 
+              autorsData.slice(0, 7).map((el,index) => {
+              return <Autor key={index} src={el.src} name={el.name} books={el.books} />
             }) 
             
               : <div className={'notText'}><Typography variant="h4">Not books</Typography></div>}
-            {booksData && 
+            {autorsData && 
             <div className={'btn'}>
             <SuperButtonBig
               colorBack={"#F4CE47"}
@@ -38,8 +38,8 @@ export const Books = ({ id, booksData, handlerBtnCard, handlerIcons, handlerSeaA
               colorTextActive={"#F4CE47"}
               variant="default"
               onClick={handlerSeaAll}
-              width={'1000'}
-              height={'218'}
+              width={'294'}
+              height={'146'}
             >
               <Typography variant="h4">See all</Typography>
             </SuperButtonBig>
@@ -70,7 +70,7 @@ const Cards = styled.div`
   gap:7px;
   
   & .btn{
-     width:395px;
+     width:294px;
   }
 
 `

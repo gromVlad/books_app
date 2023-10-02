@@ -125,6 +125,7 @@ export const ButtonDef = styled.button<ButtonDefProps>(
     width,
     height
   }) => `
+  padding:0px;
   cursor:pointer;
   display: inline-flex;
   max-width:${width}px;
