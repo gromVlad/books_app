@@ -70,7 +70,7 @@ const Container = styled.div`
   padding: 16px;
   max-width: 363px;
   width:100%;
-  height: 184px;
+  height: 200px;
   background: ${thems.colors.white.whiteHighEmphasis};
   cursor: pointer;
   transition: ${thems.animation.card};

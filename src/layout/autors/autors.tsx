@@ -56,6 +56,7 @@ const Content = styled.div`
   padding: 20px 24px 44px 24px;
   background:${thems.colors.black.blackbg};
   & h4{
+    padding:24px;
     text-align:center;
     color:${thems.colors.white.whiteHighEmphasis};
   }

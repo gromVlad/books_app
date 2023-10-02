@@ -5,6 +5,7 @@ import { Typography } from "../../components/ui/typography/typography";
 import { SuperButton } from "../../components/ui/button/superButton";
 import { thems } from "../../components/thems";
 import sprite from "../../assets/sprite.svg";
+import { Container } from "../../components/ui/container/container";
 
 type NavType = { name: string; link: string };
 type ArrNavType = Array<NavType>;
@@ -23,68 +24,79 @@ export const Header = ({ onClick, navItems }: FooterProps) => {
   };
 
   return (
-    <Container isActive={isActive}>
-      <svg
-        width="166"
-        height="44"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <use xlinkHref={`${sprite}#${"logo"}`} />
-      </svg>
-      <Content>
-        {navItems?.map((el) => {
-          return (
-            <li>
-              <Link
-                activeClass="active"
-                to={el.link}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                onClick={handleClick}
-              >
-                <Typography variant="h6">{el.name}</Typography>
-              </Link>
-            </li>
-          );
-        })}
-      </Content>
-      <SuperButton
-        colorBack={thems.colors.yellow.yellow500}
-        colorHover={thems.colors.yellow.yellow900}
-        colorActive={thems.colors.black.gray}
-        colorText={thems.colors.black.blackHighEmpathis}
-        colorTextActive={thems.colors.yellow.yellow500}
-        variant={"default"}
-        onClick={onClick}
-      >
-        <Typography variant="buttonOrTab">Login</Typography>
-      </SuperButton>
-      <BurgerContainer
-        className={"burger"}
-        onClick={handleClick}
-        isActive={isActive}
-      >
-        <BurgerBar />
-        <BurgerBar />
-        <BurgerBar />
-        <BurgerBar />
-      </BurgerContainer>
+    <Container >
+      <Block>
+      <ContainerH isActive={isActive}>
+        <svg
+          width="166"
+          height="44"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use xlinkHref={`${sprite}#${"logo"}`} />
+        </svg>
+        <Content>
+          {navItems?.map((el) => {
+            return (
+              <li>
+                <Link
+                  activeClass="active"
+                  to={el.link}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  onClick={handleClick}
+                >
+                  <Typography variant="h6">{el.name}</Typography>
+                </Link>
+              </li>
+            );
+          })}
+        </Content>
+        <SuperButton
+          colorBack={thems.colors.yellow.yellow500}
+          colorHover={thems.colors.yellow.yellow900}
+          colorActive={thems.colors.black.gray}
+          colorText={thems.colors.black.blackHighEmpathis}
+          colorTextActive={thems.colors.yellow.yellow500}
+          variant={"default"}
+          onClick={onClick}
+        >
+          <Typography variant="buttonOrTab">Login</Typography>
+        </SuperButton>
+        <BurgerContainer
+          className={"burger"}
+          onClick={handleClick}
+          isActive={isActive}
+        >
+          <BurgerBar />
+          <BurgerBar />
+          <BurgerBar />
+          <BurgerBar />
+        </BurgerContainer>
+      </ContainerH>
+    </Block>
     </Container>
   );
 };
+
+const Block = styled.div`
+  display:flex;
+  justify-content: center;
+  padding:24px;
+`
 
 export type ContentProps = {
   isActive: boolean;
 };
 
-const Container = styled.div<ContentProps>(
+const ContainerH = styled.div<ContentProps>(
   ({ isActive }) => `
   display: flex;
   gap: 10px 20px;
   max-width: 1200px;
+  width:100%;
   height: 88px;
   padding: 20px 24px;
   justify-content: space-between;
@@ -118,10 +130,13 @@ const Container = styled.div<ContentProps>(
     }
     .burger{
       display: block;
-      ${isActive && `
+      ${
+        isActive &&
+        `
       position: fixed;
       top: 15%; right: 5%;
-      `}
+      `
+      }
     }
 
 

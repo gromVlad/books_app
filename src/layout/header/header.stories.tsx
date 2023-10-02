@@ -16,6 +16,7 @@ export const WithAutors = () => {
     { name: "Books", link: "books" },
     { name: "Authors", link: "authors" },
     { name: "What to Read?", link: "read" },
+    { name: "Gift Ideas", link: "ideas" },
     { name: "About Us", link: "about" },
   ];
     

@@ -8,7 +8,7 @@ type linkType = { name: string; link: string };
 type ArrDataLink = Array<linkType>;
 
 type FooterType = {
-  id: string;
+  id?: string;
   email?: string;
   telephone?: string;
   dataLink?: ArrDataLink;

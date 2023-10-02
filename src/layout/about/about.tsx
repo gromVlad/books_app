@@ -28,12 +28,12 @@ export const About = ({ id }: AboutType) => {
 };
 
 const Content = styled.div`
-  padding:24px;
+  padding:0px 24px 24px 24px;
   & h2{
     text-align:center;
     text-transform: uppercase;
     margin:0px;
-    padding:0px;
+    padding-bottom:24px;
     letter-spacing: 2px;
   }
 

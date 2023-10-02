@@ -38,8 +38,8 @@ export const Books = ({ id, booksData, handlerBtnCard, handlerIcons, handlerSeaA
               colorTextActive={"#F4CE47"}
               variant="default"
               onClick={handlerSeaAll}
-              width={'1000'}
-              height={'218'}
+              width={'363'}
+              height={'200'}
             >
               <Typography variant="h4">See all</Typography>
             </SuperButtonBig>
@@ -56,6 +56,7 @@ const Content = styled.div`
   padding: 20px 24px 44px 24px;
   background:${thems.colors.black.blackbg};
   & h4{
+    padding:24px;
     text-align:center;
     color:${thems.colors.white.whiteHighEmphasis};
   }
@@ -70,7 +71,7 @@ const Cards = styled.div`
   gap:7px;
   
   & .btn{
-     width:395px;
+     width:363px;
   }
 
 `
