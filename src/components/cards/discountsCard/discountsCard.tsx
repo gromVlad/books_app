@@ -22,6 +22,7 @@ const Container = styled.div`
   overflow: hidden;
   display: flex;
   max-width: 495px;
+  width:100%;
   height: 192px;
   justify-content: center;
   align-items: center;
@@ -31,6 +32,10 @@ const Container = styled.div`
   background: ${thems.colors.black.blackbg};
   transition: ${thems.animation.card};
   cursor: pointer;
+
+  & h4{
+    z-index:3;
+  }
 
   &:hover {
     background: ${thems.colors.yellow.yellow800};

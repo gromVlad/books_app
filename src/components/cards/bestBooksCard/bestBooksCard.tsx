@@ -37,6 +37,7 @@ const Container = styled.div`
   overflow: hidden;
   display: flex;
   max-width: 697px;
+  width:100%;
   height: 192px;
   justify-content: center;
   align-items: center;
@@ -49,6 +50,7 @@ const Container = styled.div`
 
   & h4{
     text-transform: uppercase;
+    z-index:3;
   }
 
   &:hover {
