@@ -53,7 +53,7 @@ export const WhatToRead = ({ onClick }: WhatToReadType) => {
 const Container = styled.div`
   display: flex;
   position: relative;
-  width: 95%;
+  width: 100%;
   flex-wrap: wrap;
   overflow: hidden;
   max-height: 348px;
