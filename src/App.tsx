@@ -16,7 +16,7 @@ export function App() {
       <WhatRead id="read"/>
       <Autors id='authors' autorsData={authorsData} />
       <GiftIdeas id="ideas" />
-      <Footer dataLink={footerData} email={'support@bbookshelf.com'} telephone={'+44 1332 412251'} />
+      <Footer id="aboutUs" dataLink={footerData} email={'support@bbookshelf.com'} telephone={'+44 1332 412251'} />
     </>
   );
 }

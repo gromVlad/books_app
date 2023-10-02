@@ -100,5 +100,5 @@ export const headerData = [
   { name: "What to Read?", link: "read" },
   { name: "Authors", link: "authors" },
   { name: "Gift Ideas", link: "ideas" },
-  { name: "About Us", link: "about" },
+  { name: "About Us", link: "aboutUs" },
 ];
