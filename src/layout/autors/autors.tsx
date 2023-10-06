@@ -23,7 +23,7 @@ export const Autors = ({ id, autorsData, handlerSeaAll }: AutorsType) => {
           <Typography variant="h4">POPULAR AUTHORS</Typography>
           <Cards>
             {autorsData ? 
-              autorsData.map((el,index) => {
+              autorsData.slice(0, 7).map((el,index) => {
               return <Autor key={index} src={el.src} name={el.name} books={el.books} />
             }) 
             
