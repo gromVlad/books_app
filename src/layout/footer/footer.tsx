@@ -2,8 +2,6 @@ import styled from "styled-components";
 import sprite from "../../assets/sprite.svg";
 import { Typography } from "../../components/ui/typography/typography";
 import { thems } from "../../components/thems";
-import { Container } from "../../components/ui/container/container";
-
 type linkType = { name: string; link: string };
 type ArrDataLink = Array<linkType>;
 
@@ -19,7 +17,7 @@ export const Footer = ({ email, telephone, dataLink, id }: FooterType) => {
   const em = `${email}`;
 
   return (
-    <Container id={id}>
+    <div id={id}>
       <ContainerUp>
         <svg
           width="166"
@@ -72,7 +70,7 @@ export const Footer = ({ email, telephone, dataLink, id }: FooterType) => {
           {email ? <Typography variant="caption">{em}</Typography> : ""}
         </div>
       </ContainerDown>
-    </Container>
+    </div>
   );
 };
 

@@ -109,9 +109,9 @@ export const ButtonDef = styled.button<ButtonDefProps>(
     color:${colorTextActive};
   }
 
-  /* @media screen and (max-width:800px){
-    flex-directions:column;
-  } */
+   @media screen and (max-width:400px){
+    padding: 8px 14px;
+  } 
 `,
 );
 
@@ -135,7 +135,7 @@ export const ButtonIcon = styled.button<ButtonIconProps>(
   }) => `
   cursor: pointer;
   display: inline-flex;
-  border-radius: 50%;
+  border-radius: 100%;
   padding:0;
   border: none;
   color:${ colorText };
@@ -150,6 +150,9 @@ export const ButtonIcon = styled.button<ButtonIconProps>(
     background: ${ colorActive || "transparent" };
     color:${ colorTextActive };
   } 
+  svg {
+    max-width:none;
+  }
 `)
 
 

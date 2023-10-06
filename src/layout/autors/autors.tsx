@@ -17,13 +17,13 @@ export const Autors = ({ id, autorsData, handlerSeaAll }: AutorsType) => {
   
 
   return (
-    <>
+    <div style={{ background: `${thems.colors.black.blackbg}` }}>
       <Container id={id} >
         <Content>
           <Typography variant="h4">POPULAR AUTHORS</Typography>
           <Cards>
             {autorsData ? 
-              autorsData.slice(0, 7).map((el,index) => {
+              autorsData.map((el,index) => {
               return <Autor key={index} src={el.src} name={el.name} books={el.books} />
             }) 
             
@@ -47,7 +47,7 @@ export const Autors = ({ id, autorsData, handlerSeaAll }: AutorsType) => {
           </Cards>
         </Content>
       </Container>
-    </>
+    </div>
       
   );
 };

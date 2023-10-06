@@ -123,6 +123,7 @@ const ContainerH = styled.div<ContentProps>(
       position: fixed;
       top:80%;
       left: 50%;
+      transform: translate(-50%,-50%);
       flex-direction: column;
       justify-content: center;
       align-items: center;

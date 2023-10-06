@@ -81,6 +81,10 @@ const Container = styled.div`
     max-width: 500px;
   }
 
+  & .btn{
+    z-index:5;
+  }
+
   & .iconBack svg{
     position: absolute;
     right: 17%;

@@ -17,7 +17,7 @@ export const Books = ({ id, booksData, handlerBtnCard, handlerIcons, handlerSeaA
   
 
   return (
-    <>
+      <div style={{ background: `${thems.colors.black.blackbg}`}}>
       <Container id={id} >
         <Content>
           <Typography variant="h4">Bestsellers</Typography>
@@ -47,8 +47,7 @@ export const Books = ({ id, booksData, handlerBtnCard, handlerIcons, handlerSeaA
           </Cards>
         </Content>
       </Container>
-    </>
-      
+    </div >
   );
 };
 
